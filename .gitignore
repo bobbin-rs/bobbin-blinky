@@ -1,3 +1,4 @@
 *.bk
+**/.bobbin/
 **/Cargo.lock
 **/target/
