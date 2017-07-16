@@ -20,7 +20,7 @@ pub const GPIOE_PDDR: *mut u32 = 0x400f_f114 as *mut u32;
 #[no_mangle]
 pub extern "C" fn main() -> ! {
     unsafe {
-        // Enable PORT#
+        // Enable PORTE
         ptr::write_volatile(SIM_SCGC5, ptr::read_volatile(SIM_SCGC5) | 1 << 13);
         // Set PTE29 to GPIO
         ptr::write_volatile(PORTE_PCR29, 0x100);
