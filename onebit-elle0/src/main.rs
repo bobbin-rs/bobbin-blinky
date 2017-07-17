@@ -16,9 +16,8 @@ pub const RCC_AHB1ENR: *mut u32 = 0x4002_3830 as *mut u32;
 pub const GPIOA_MODER: *mut u32 = 0x4002_0000 as *mut u32;
 pub const GPIOA_BSRR: *mut u32 = 0x4002_0018 as *mut u32;
 
-#[doc(hidden)]
-#[export_name = "_reset"]
-pub extern "C" fn reset() -> ! {
+#[no_mangle]
+pub extern "C" fn main() -> ! {
     unsafe {
         // Enable GPIOA
         ptr::write_volatile(RCC_AHB1ENR, ptr::read_volatile(RCC_AHB1ENR) | 1 << 0);

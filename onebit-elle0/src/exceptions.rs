@@ -4,15 +4,15 @@ pub unsafe extern "C" fn default_handler_entry_point() -> ! {
     loop {}
 }
 
-// #[doc(hidden)]
-// #[export_name = "_reset"]
-// pub unsafe extern "C" fn reset() -> ! {
-//     extern "C" {
-//         fn main();
-//     }    
-//     main();
-//     loop {}
-// }
+#[doc(hidden)]
+#[export_name = "_reset"]
+pub unsafe extern "C" fn reset() -> ! {
+    extern "C" {
+        fn main();
+    }    
+    main();
+    loop {}
+}
 
 pub type Handler = unsafe extern "C" fn();
 
