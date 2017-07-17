@@ -1,0 +1,11 @@
+[package]
+name = "blue-pill"
+version = "0.1.0"
+authors = ["Jonathan Soo <jcsoo@agora.com>"]
+
+[dependencies]
+
+[profile.dev]
+panic = "abort"
+opt-level = "s"
+lto = false
